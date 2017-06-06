@@ -11,5 +11,6 @@ config_schema:
 tags:
   - c
   - wifi
+  - net
 
 skeleton_version: 2017-05-18

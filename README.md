@@ -1,14 +1,5 @@
 # Scan WiFi networks on button press
 
-## How to install this app
-
-- Install and start [mos tool](https://mongoose-os.com/software.html)
-- Switch to the Project page, find and import this app, build and flash it:
-
-<p align="center">
-  <img src="https://mongoose-os.com/images/app1.gif" width="75%">
-</p>
-
 ## Overview
 
 This app demonstrates how to scan for available WiFi networks. WiFi scan
@@ -42,3 +33,12 @@ wifi_scan_cb         Got SSID [Amethyst Guru WiFi]
 wifi_scan_cb         Got SSID [NETs 3012 Staff]
 wifi_scan_cb         WiFi scan done.
 ```
+
+## How to install this app
+
+- Install and start [mos tool](https://mongoose-os.com/software.html)
+- Switch to the Project page, find and import this app, build and flash it:
+
+<p align="center">
+  <img src="https://mongoose-os.com/images/app1.gif" width="75%">
+</p>
