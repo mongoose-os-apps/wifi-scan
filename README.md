@@ -1,7 +1,18 @@
 # Scan WiFi networks on button press
 
-Start [mos tool](https://mongoose-os.com/software.html),
-import this app, build it and flash it.
+## How to install this app
+
+- Install and start [mos tool](https://mongoose-os.com/software.html)
+- Switch to the Project page, find and import this app, build and flash it:
+
+<p align="center">
+  <img src="https://mongoose-os.com/images/app1.gif" width="75%">
+</p>
+
+## Overview
+
+This app demonstrates how to scan for available WiFi networks. WiFi scan
+is triggered by a button press.
 
 On NodeMCU and DevKitC, a button pin is already configured to pin 0,
 which is a "Flash" button.

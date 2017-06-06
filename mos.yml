@@ -1,12 +1,15 @@
 author: mongoose-os
 description: Scan WiFi networks on button press
 version: 1.0
+
 sources:
   - src
 config_schema:
   - ["my_app", "o", {title: "My app custom settings"}]
   - ["my_app.button_pin", "i", 0, {title: "Button GPIO pin number"}]
+
 tags:
   - c
   - wifi
+
 skeleton_version: 2017-05-18
