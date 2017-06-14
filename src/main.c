@@ -19,9 +19,8 @@ static void wifi_cb(enum mgos_wifi_status event, void *arg) {
 }
 
 enum mgos_app_init_result mgos_app_init(void) {
-  mgos_gpio_set_button_handler(get_cfg()->my_app.button_pin,
-                               MGOS_GPIO_PULL_UP, MGOS_GPIO_INT_EDGE_POS, 200,
-                               button_cb, NULL);
+  mgos_gpio_set_button_handler(get_cfg()->my_app.button_pin, MGOS_GPIO_PULL_UP,
+                               MGOS_GPIO_INT_EDGE_POS, 200, button_cb, NULL);
   mgos_wifi_add_on_change_cb(wifi_cb, NULL);
   return MGOS_APP_INIT_SUCCESS;
 }
