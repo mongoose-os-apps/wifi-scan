@@ -1,4 +1,4 @@
-#include "fw/src/mgos.h"
+#include "mgos.h"
 
 static void wifi_scan_cb(int n, struct mgos_wifi_scan_result *res, void *arg) {
   LOG(LL_INFO, ("WiFi scan result: SSIDs %d, arg %p, results:", n, arg));
