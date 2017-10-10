@@ -21,7 +21,7 @@ static void wifi_cb(enum mgos_net_event ev,
 }
 
 enum mgos_app_init_result mgos_app_init(void) {
-  int pin = get_cfg()->my_app.button_pin;
+  int pin = mgos_sys_config_get_my_app_button_pin();
   mgos_gpio_set_button_handler(pin, MGOS_GPIO_PULL_UP, MGOS_GPIO_INT_EDGE_POS,
                                200, button_cb, NULL);
   mgos_net_add_event_handler(wifi_cb, NULL);
