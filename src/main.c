@@ -25,11 +25,12 @@ static void wifi_cb(int ev, void *evd, void *arg) {
 
 enum mgos_app_init_result mgos_app_init(void) {
   char buf[8];
-  int pin = mgos_sys_config_get_pins_button();
-  mgos_gpio_set_button_handler(pin, MGOS_GPIO_PULL_UP, MGOS_GPIO_INT_EDGE_POS,
-                               200, button_cb, NULL);
+  int btn_pin = mgos_sys_config_get_board_btn1_pin();
+  mgos_gpio_set_button_handler(btn_pin, MGOS_GPIO_PULL_UP,
+                               MGOS_GPIO_INT_EDGE_POS, 200, button_cb, NULL);
   mgos_event_add_group_handler(MGOS_EVENT_GRP_NET, wifi_cb, NULL);
-  LOG(LL_INFO, ("Button is configured on pin %s.", mgos_gpio_str(pin, buf)));
+  LOG(LL_INFO,
+      ("Button is configured on pin %s.", mgos_gpio_str(btn_pin, buf)));
   LOG(LL_INFO, ("Click on a button to initialise WiFi scan."));
   return MGOS_APP_INIT_SUCCESS;
 }
