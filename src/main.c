@@ -3,8 +3,12 @@
 static void wifi_scan_cb(int n, struct mgos_wifi_scan_result *res, void *arg) {
   LOG(LL_INFO, ("WiFi scan result: SSIDs %d, arg %p, results:", n, arg));
   for (int i = 0; i < n; i++) {
-    LOG(LL_INFO, ("  SSID: %-32s, auth: %2d, channel: %2d, RSSI: %2d",
-                  res[i].ssid, res[i].auth_mode, res[i].channel, res[i].rssi));
+    LOG(LL_INFO,
+        ("  SSID: %-32s, BSSID: %02x:%02x:%02x:%02x:%02x:%02x "
+         "auth: %d, channel: %3d, RSSI: %2d",
+         res[i].ssid, res[i].bssid[0], res[i].bssid[1], res[i].bssid[2],
+         res[i].bssid[3], res[i].bssid[4], res[i].bssid[5], res[i].auth_mode,
+         res[i].channel, res[i].rssi));
   }
   LOG(LL_INFO, ("WiFi scan done."));
 }
