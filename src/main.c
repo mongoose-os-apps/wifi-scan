@@ -20,7 +20,9 @@ static void timer_cb(void *arg) {
 }
 
 enum mgos_app_init_result mgos_app_init(void) {
-  mgos_set_timer(mgos_sys_config_get_scan_interval_ms(),
-                 MGOS_TIMER_REPEAT | MGOS_TIMER_RUN_NOW, timer_cb, NULL);
+  if (mgos_sys_config_get_scan_interval_ms() > 0) {
+    mgos_set_timer(mgos_sys_config_get_scan_interval_ms(),
+                   MGOS_TIMER_REPEAT | MGOS_TIMER_RUN_NOW, timer_cb, NULL);
+  }
   return MGOS_APP_INIT_SUCCESS;
 }
