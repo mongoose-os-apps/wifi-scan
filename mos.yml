@@ -16,6 +16,9 @@ libs:
   - origin: https://github.com/mongoose-os-libs/rpc-uart
   - origin: https://github.com/mongoose-os-libs/wifi
 
+config_schema:
+  - ["scan_interval_ms", "i", 10000, {"title": "Scan interval"}]
+
 tags:
   - c
   - wifi
